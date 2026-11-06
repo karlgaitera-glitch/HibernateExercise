@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-@Repository 
+@Repository
 public class StudentDaoImplement implements StudentDao {
 
     private EntityManager em;
@@ -30,15 +30,17 @@ public class StudentDaoImplement implements StudentDao {
         return em.find(Student.class, id);
     }
 
-    @Override 
+    @Override
     public List<Student> findAll() {
-        TypedQuery<Student> query = em.createQuery("FROM Student order by lastName", Student.class);
+        TypedQuery<Student> query = em.createQuery(
+                "FROM Student order by lastName", Student.class);
         return query.getResultList();
     }
 
     @Override
     public List<Student> findByLastName(String lastName) {
-        TypedQuery<Student> query = em.createQuery("FROM Student WHERE lastName=:theData", Student.class);
+        TypedQuery<Student> query = em.createQuery(
+                "FROM Student WHERE lastName=:theData", Student.class);
         query.setParameter("theData", lastName);
         return query.getResultList();
     }
@@ -59,7 +61,8 @@ public class StudentDaoImplement implements StudentDao {
     @Override
     @Transactional
     public int deleteAll() {
-        int numRows = em.createQuery("DELETE FROM Student").executeUpdate();
+        int numRows = em.createQuery(
+                "DELETE FROM Student").executeUpdate();
         return numRows;
     }
 }

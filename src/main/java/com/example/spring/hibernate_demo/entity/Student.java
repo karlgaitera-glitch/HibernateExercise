@@ -7,22 +7,26 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Represents a student and maps student data to the {@code student} database
+ * table.
+ */
 @Entity
 @Table(name = "student")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id")
+    @Column(name = "id")
     private int id;
 
     @Column(name = "first_name")
     private String firstName;
 
-    @Column (name = "last_name")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column (name = "email")
+    @Column(name = "email")
     private String email;
 
     public Student() {
@@ -68,7 +72,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student [id=" + id + ", firstName=" + firstName + 
-            ", lastName=" + lastName + ", email=" + email + "]";
-    }    
+        return "Student [id=" + id + ", firstName=" + firstName +
+                ", lastName=" + lastName + ", email=" + email + "]";
+    }
 }
