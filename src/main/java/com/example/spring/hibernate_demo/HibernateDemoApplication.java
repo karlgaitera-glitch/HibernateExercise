@@ -194,9 +194,12 @@ public class HibernateDemoApplication {
 
 	private void createCourseAndReviews(AppDao appDao){
 		Course course = new Course("How to Speed Run Spring in 1 Day");
-		course.addReview(new Review("Great speed 2x...loved it!!!!"));
-		course.addReview(new Review("I wanted speed 0.75:(((((("));
-		course.addReview(new Review("Hoping to do a speed of 3x :D. Anyways, nice."));
+		course.addReview(new Review(
+			"Great speed 2x...loved it!!!!"));
+		course.addReview(new Review(
+			"I wanted speed 0.75:(((((("));
+		course.addReview(new Review(
+			"Hoping to do a speed of 3x :D. Anyways, nice."));
 
 		System.out.println("Course saved!");
 		appDao.save(course);
