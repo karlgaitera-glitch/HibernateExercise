@@ -1,17 +1,17 @@
 package com.example.spring.hibernate_demo.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.FetchType;
 
+/**
+ * Represents a {@link Review} entity mapped to the "review" database table.
+ * 
+ * Stores user feedback and comments associated with a {@link Course}.
+ */
 @Entity
 @Table(name = "review")
 public class Review {
@@ -24,9 +24,17 @@ public class Review {
     @Column(name = "comments")
     private String comments;
 
+    /**
+     * Default no-arg constructor required by JPA.
+     */
     public Review() {
     }
 
+    /**
+     * Constructs a new Review with the specified comment feedback.
+     *
+     * @param comments text content of the review
+     */
     public Review(String comments) {
         this.comments = comments;
     }

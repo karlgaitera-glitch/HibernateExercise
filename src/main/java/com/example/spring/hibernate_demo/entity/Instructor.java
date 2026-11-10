@@ -3,15 +3,21 @@ package com.example.spring.hibernate_demo.entity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.Table;
 
+/**
+ * Represents an {@link Instructor} entity mapped to the "instructor" table.
+ * 
+ * Manages relationships with detailed profile information in
+ * {@link InstructorDetail} and associated {@link Course} entities.
+ */
 @Entity
 @Table(name = "instructor")
 public class Instructor {
@@ -34,13 +40,24 @@ public class Instructor {
     @JoinColumn(name = "instructor_detail_id")
     private InstructorDetail instructorDetail;
 
-    @OneToMany(mappedBy = "instructor", cascade = { CascadeType.DETACH, CascadeType.MERGE,
-            CascadeType.PERSIST, CascadeType.REFRESH }, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "instructor", cascade = { CascadeType.DETACH,
+            CascadeType.MERGE, CascadeType.PERSIST,
+            CascadeType.REFRESH }, fetch = FetchType.LAZY)
     private java.util.List<Course> courses;
-
+    
+    /**
+     * Default no-arg constructor required by JPA.
+     */
     public Instructor() {
     }
 
+    /**
+     * Constructs a new Instructor with personal details.
+     *
+     * @param firstName the instructor's first name
+     * @param lastName the instructor's last name
+     * @param email the instructor's email address
+     */
     public Instructor(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -102,6 +119,14 @@ public class Instructor {
                 ", instructorDetail=" + instructorDetail + "]";
     }
 
+    /**
+     * Adds a course to the instructor's list of courses and sets
+     * this instructor as the course's instructor to maintain the
+     * bidirectional relationship.
+     * Initializes the courses collection if it has not been instantiated yet.
+     *
+     * @param tcourse the {@link Course} entity to assign to this instructor
+     */
     public void addCourse(Course tcourse) {
         if (this.courses == null) {
             this.courses = new java.util.ArrayList<>();
