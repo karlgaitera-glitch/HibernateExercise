@@ -44,7 +44,7 @@ public class Instructor {
             CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.REFRESH }, fetch = FetchType.LAZY)
     private java.util.List<Course> courses;
-    
+
     /**
      * Default no-arg constructor required by JPA.
      */
@@ -55,8 +55,8 @@ public class Instructor {
      * Constructs a new Instructor with personal details.
      *
      * @param firstName the instructor's first name
-     * @param lastName the instructor's last name
-     * @param email the instructor's email address
+     * @param lastName  the instructor's last name
+     * @param email     the instructor's email address
      */
     public Instructor(String firstName, String lastName, String email) {
         this.firstName = firstName;

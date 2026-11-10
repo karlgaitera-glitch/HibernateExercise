@@ -47,11 +47,12 @@ public class Course {
     @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.REFRESH })
-    @JoinTable(name="course_student", 
-        joinColumns = @JoinColumn(name="course_id"),
-        inverseJoinColumns = @JoinColumn(name="student_id"))
+    @JoinTable(
+        name = "course_student", 
+        joinColumns = @JoinColumn(name = "course_id"), 
+        inverseJoinColumns = @JoinColumn(name = "student_id"))
     private List<Student> students;
-    
+
     /**
      * Default no-arg constructor required by JPA.
      */
@@ -131,12 +132,11 @@ public class Course {
      *
      * @param stud the {@link Student} entity to enroll in this course
      */
-    public void addStudent(Student stud){
-        if(students == null){
+    public void addStudent(Student stud) {
+        if (students == null) {
             students = new ArrayList<>();
         }
         students.add(stud);
     }
 
-    
 }

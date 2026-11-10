@@ -89,7 +89,7 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Creates a new instructor along with their detailed information 
+	 * Creates a new instructor along with their detailed information
 	 * and persists them to the database.
 	 *
 	 * @param appDao the DAO used to persist the instructor
@@ -135,8 +135,8 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Finds and prints instructor details and the associated 
-	 * instructor by detail	ID.
+	 * Finds and prints instructor details and the associated
+	 * instructor by detail ID.
 	 *
 	 * @param appDao the DAO used to retrieve the instructor detail
 	 */
@@ -164,7 +164,7 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Creates an instructor along with multiple assigned courses 
+	 * Creates an instructor along with multiple assigned courses
 	 * and persists them.
 	 *
 	 * @param appDao the DAO used to persist the instructor and courses
@@ -203,8 +203,8 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Retrieves courses belonging to a specific instructor ID and associates 
-	 * them	manually.
+	 * Retrieves courses belonging to a specific instructor ID and associates
+	 * them manually.
 	 *
 	 * @param appDao the DAO used to query courses by instructor ID
 	 */
@@ -239,7 +239,7 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Fetches an instructor, updates their last name, and merges changes 
+	 * Fetches an instructor, updates their last name, and merges changes
 	 * back into the database.
 	 *
 	 * @param appDao the DAO used to retrieve and update the instructor
@@ -272,7 +272,7 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Creates a new course along with attached student reviews 
+	 * Creates a new course along with attached student reviews
 	 * and persists it.
 	 *
 	 * @param appDao the DAO used to persist the course and reviews
@@ -317,8 +317,8 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Creates a new course, creates multiple students, enrolls them, 
-	 * and persists	the entity tree.
+	 * Creates a new course, creates multiple students, enrolls them,
+	 * and persists the entity tree.
 	 *
 	 * @param appDao the DAO used to save the course and enrolled students
 	 */
@@ -338,7 +338,7 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Retrieves a course along with its list of enrolled 
+	 * Retrieves a course along with its list of enrolled
 	 * students by course ID.
 	 *
 	 * @param appDao the DAO used to retrieve the course and students
@@ -352,7 +352,7 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Retrieves a student along with all courses they are enrolled 
+	 * Retrieves a student along with all courses they are enrolled
 	 * in by student ID.
 	 *
 	 * @param appDao the DAO used to fetch the student and courses
@@ -366,11 +366,11 @@ public class HibernateDemoApplication {
 	}
 
 	/**
-	 * Retrieves a student by ID, enrolls them in additional courses, 
+	 * Retrieves a student by ID, enrolls them in additional courses,
 	 * and updates the record.
 	 *
-	 * @param appDao the DAO used to fetch and update student course 
-	 * enrollments
+	 * @param appDao the DAO used to fetch and update student course
+	 *               enrollments
 	 */
 	private void addMoreCoursesForStudent(AppDao appDao) {
 		int id = 4;

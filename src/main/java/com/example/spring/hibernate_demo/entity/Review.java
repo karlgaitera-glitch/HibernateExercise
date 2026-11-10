@@ -60,5 +60,4 @@ public class Review {
         return "Review [id=" + id + ", comments=" + comments + "]";
     }
 
-    
 }

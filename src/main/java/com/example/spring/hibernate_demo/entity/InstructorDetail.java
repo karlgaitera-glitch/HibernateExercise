@@ -31,10 +31,10 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
-    @OneToOne(mappedBy = "instructorDetail", cascade = {CascadeType.DETACH,
-            CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})    
+    @OneToOne(mappedBy = "instructorDetail", cascade = { CascadeType.DETACH,
+            CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
     private Instructor instructor;
-    
+
     /**
      * Default no-arg constructor required by JPA.
      */
@@ -45,7 +45,7 @@ public class InstructorDetail {
      * Constructs a new InstructorDetail with the specified subject and hobby.
      *
      * @param subject the main subject area taught by the instructor
-     * @param hobby the instructor's personal hobby
+     * @param hobby   the instructor's personal hobby
      */
     public InstructorDetail(String subject, String hobby) {
         this.subject = subject;
@@ -75,7 +75,7 @@ public class InstructorDetail {
     public void setHobby(String hobby) {
         this.hobby = hobby;
     }
-    
+
     public Instructor getInstructor() {
         return instructor;
     }
@@ -83,7 +83,7 @@ public class InstructorDetail {
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
     }
-    
+
     @Override
     public String toString() {
         return "InstructorDetail [id=" + id + ", subject=" + subject +

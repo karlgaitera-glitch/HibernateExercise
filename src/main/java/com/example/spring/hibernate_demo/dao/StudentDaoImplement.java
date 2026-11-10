@@ -20,7 +20,7 @@ public class StudentDaoImplement implements StudentDao {
     private EntityManager em;
 
     /**
-     * Constructs the DAO implementation with the injected 
+     * Constructs the DAO implementation with the injected
      * {@link EntityManager}.
      *
      * @param em the entity manager used for database operations
