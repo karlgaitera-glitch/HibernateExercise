@@ -71,21 +71,23 @@ public class AppDaoImplement implements AppDao {
         return em.find(InstructorDetail.class, theId);
     }
 
-    /*
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @Transactional
-    public void deleteInstructorDetailById(Integer theId) {
+    public void deleteInstructorDetail(int theId) {
         InstructorDetail instructorDetail = em.find(
             InstructorDetail.class, theId);
         em.remove(instructorDetail);
-    } */
+    }
 
     /**
      * {@inheritDoc}
      */
     @Override
     @Transactional
-    public void deleteInstructorDetailById(int theId) {
+    public void deleteInstructorDetailWithNull(int theId) {
         InstructorDetail instructorDetail = em.find(
             InstructorDetail.class, theId);
         instructorDetail.getInstructor().setInstructorDetail(null);

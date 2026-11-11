@@ -48,12 +48,23 @@ public interface AppDao {
     InstructorDetail findInstructorDetailById(int theId);
 
     /**
-     * Deletes an instructor detail record by primary key ID and breaks the
-     * associated linkage.
+     * Deletes an instructor detail record by primary key ID along with its
+     * associated instructor via cascade deletion. 
+     * (InstructorDetail.Instructor CascadeType was ALL)
      *
      * @param theId the unique ID of the instructor detail to remove
      */
-    void deleteInstructorDetailById(int theId);
+    void deleteInstructorDetail(int theId);
+
+    /**
+     * Deletes an instructor detail record by primary key ID while severing the
+     * bidirectional link to leave the associated instructor intact. 
+     * (InstructorDetail.Instructor CascadeType is now
+     * DETACH, MERGE, PERSIST, REFRESH)
+     *
+     * @param theId the unique ID of the instructor detail to remove
+     */
+    void deleteInstructorDetailWithNull(int theId);
 
     /**
      * Retrieves all courses assigned to a specific instructor.

@@ -159,7 +159,7 @@ public class HibernateDemoApplication {
 		int id = 5;
 		System.out.println("Deleting instructor detail with id: " + id);
 
-		appDao.deleteInstructorDetailById(id);
+		appDao.deleteInstructorDetailWithNull(id);
 		System.out.println("Deleted successfully!");
 	}
 
